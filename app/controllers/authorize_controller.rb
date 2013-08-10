@@ -1,11 +1,15 @@
 class AuthorizeController < ApplicationController
   def welcome
+    # session.clear
     if session[:user_id]
       @user = User.find session[:user_id]
     end
   end
 
   def auth
+    # need to find by xid instead of token
+    # even though tokens change, they can still
+    # be used I think... test later
     json = HTTParty.post(
       "https://jawbone.com/auth/oauth2/token",
       :body => {
@@ -16,6 +20,7 @@ class AuthorizeController < ApplicationController
       }
     ).body
     token = JSON.parse(json)["access_token"]
+    raise token.inspect
     @user = User.find_by_token token
     unless @user
       @user = User.new(:token => token)
