@@ -1,5 +1,6 @@
 <% if session[:user_id] %>
   <h1>Welcome back, <%= @user.first_name %></h1>
+  <%#= link_to "logout", logout_path %>
 <% else %>
   <h1>Authorize with Jawbone?</h1>
   <%= form_tag "https://jawbone.com/auth/oauth2/auth", :method => "GET" do %>
