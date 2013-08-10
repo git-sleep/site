@@ -1,5 +1,6 @@
 <% if session[:user_id] %>
   <h1>Welcome back, <%= @user.first_name %></h1>
+  <%= image_tag "https://jawbone.com/#{@user.photo}" %>
   <%#= link_to "logout", logout_path %>
 <% else %>
   <h1>Authorize with Jawbone?</h1>
