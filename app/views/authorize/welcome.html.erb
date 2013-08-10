@@ -1,7 +1,8 @@
 <% if session[:user_id] %>
   <h1>Welcome back, <%= @user.first_name %></h1>
   <%= image_tag "https://jawbone.com/#{@user.photo}" %>
-  <%#= link_to "logout", logout_path %>
+  <br><a href="/logout">TTYL (logout)</a>
+   
 <% else %>
   <h1>Authorize with Jawbone?</h1>
   <%= form_tag "https://jawbone.com/auth/oauth2/auth", :method => "GET" do %>
@@ -11,5 +12,7 @@
     <%= hidden_field_tag 'redirect_uri', "http://127.0.0.1:3000/auth" %>
     <%= submit_tag "Go get token and brb" %>
   <% end %>
+ 
+
 <% end %>
 
