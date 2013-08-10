@@ -20,7 +20,7 @@ class AuthorizeController < ApplicationController
       }
     ).body
     token = JSON.parse(json)["access_token"]
-    raise token.inspect
+    # raise token.inspect
     @user = User.find_by_token token
     unless @user
       @user = User.new(:token => token)
