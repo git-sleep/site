@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'figaro'
 gem 'omniauth'
 gem 'thin'
+gem 'httparty'
 
 group :development do
   gem 'better_errors'
