@@ -2,11 +2,9 @@ class SleepController < ApplicationController
 
   def need_sleep
     sleep = HTTParty.get(
-    'https://jawbone.com/nudge/api/users/@me/sleeps',
-    :headers => {
-      "Authorization" => "Bearer #{params[:token]}"
-    }
-  )
+      'https://jawbone.com/nudge/api/users/@me/sleeps',
+      :headers => { "Authorization" => "Bearer #{params[:token]}" }
+    )
 
     yesterday = Time.now -  24.hours
     range = (yesterday..Time.now)
@@ -22,13 +20,8 @@ class SleepController < ApplicationController
 
 
     sleep24 = total_partial_sleep.sum + total_complete_sleep.sum 
-
-    if sleep24 < 7 
-      render :json => {:sleep24 => sleep24, :can_commit => false}
-    else
-      render :json => {:sleep24 => sleep24, :can_commit => true}
-    end
-
+    
+    render :json => {:sleep24 => sleep24, :can_commit => !(sleep24 < 7) }
 
 
   end
