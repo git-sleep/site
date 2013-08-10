@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  xid: MyString
+  token: MyString
+  first_name: MyString
+  last_name: MyString
+
+two:
+  xid: MyString
+  token: MyString
+  first_name: MyString
+  last_name: MyString

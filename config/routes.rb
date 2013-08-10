@@ -1,4 +1,6 @@
 GitSleep::Application.routes.draw do
+  root :to => 'authorize#welcome'
+  get '/auth' => 'authorize#auth', :as => 'auth'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

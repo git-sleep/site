@@ -7,9 +7,12 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'figaro'
+gem 'omniauth'
+gem 'thin'
 
 group :development do
   gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 
