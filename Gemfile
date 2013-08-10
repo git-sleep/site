@@ -10,6 +10,7 @@ gem 'figaro'
 gem 'omniauth'
 gem 'thin'
 gem 'httparty'
+gem 'debugger'
 
 group :development do
   gem 'better_errors'
