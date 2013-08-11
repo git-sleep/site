@@ -2,17 +2,10 @@
 
 ## TODOS
 
-* present them with xid and gem installation instructions
-* let them set a password...?
-* avoid duplicate records caused by token changing slightly all the time
-* don't persist their name and photo in case they change? only need to persist xid and token
-
 * deploy
-* fix xid / token duplication
-* only store xid, don't story token
-* change api logic to look up token based on xid
-* if we don't have the xid in our system, return json explaining what's up
-* round float to a smaller number
+* change all references to sleepytime.com
+* change all references to localhost
+* change all references to http://196 or whatever
 
 * * *
 
