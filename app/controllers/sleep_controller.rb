@@ -1,9 +1,13 @@
 class SleepController < ApplicationController
 
   def need_sleep
+
+    @user = User.find_by_xid(params[:xid])
+
+
     sleep = HTTParty.get(
       'https://jawbone.com/nudge/api/users/@me/sleeps',
-      :headers => { "Authorization" => "Bearer #{params[:token]}" }
+      :headers => { "Authorization" => "Bearer #{@user.token}" }
     )
 
     yesterday = Time.now -  24.hours

@@ -1,6 +1,19 @@
 <% if session[:user_id] %>
   <h1>Welcome back, <%= @user.first_name %></h1>
   <%= image_tag "https://jawbone.com/#{@user.photo}" %>
+  
+
+  <div class="instructions">
+    <h2>Instructions</h2>
+    <ul>
+      <li><code>gem install git-sleep</code></li>
+      <li><code>git sleep authorize</code></li>
+      <li>Provide your xid: <code><%= @user.xid %></code></li>
+    </ul>
+  </div>
+
+
+
   <br><a href="/logout">TTYL (logout)</a>
    
 <% else %>
