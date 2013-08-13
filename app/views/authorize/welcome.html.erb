@@ -22,7 +22,7 @@
     <%= hidden_field_tag 'client_id', ENV["JAWBONE_CLIENT_ID"] %>
     <%= hidden_field_tag 'response_type', 'code' %>
     <%= hidden_field_tag 'scope', 'basic_read sleep_read' %>
-    <%= hidden_field_tag 'redirect_uri', "http://127.0.0.1:3000/auth" %>
+    <%= hidden_field_tag 'redirect_uri', "http://gitsleep.com/auth" %>
     <%= submit_tag "Go get token and brb" %>
   <% end %>
  

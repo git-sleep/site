@@ -27,7 +27,7 @@ class SleepController < ApplicationController
 
       sleep24 = (total_partial_sleep.sum + total_complete_sleep.sum).round(2)
       
-      render :json => {:sleep24 => sleep24, :can_commit => !(sleep24 < 7) }
+      render :json => {:sleep24 => sleep24, :can_commit => (sleep24 > 7) }
     end
 
   end
