@@ -10,8 +10,8 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/about">About</a></li><%= render 'about' %>
+          <li><a href="/contact">Contact</a></li>
           <ul class="nav pull-right">
           <li><% if session[:user_id] %><a href="/logout">TTYL (logout)</a>   
           <% end %></li>  
