@@ -7,7 +7,9 @@ class AuthorizeController < ApplicationController
   end
 
   def auth
-
+  
+    auth = request.env["omniauth.auth"] 
+     
     token = User.temporary_code_to_token(params[:code])
     user_info = User.token_to_user_info(token)
     
