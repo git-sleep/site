@@ -4,6 +4,12 @@ class AuthorizeController < ApplicationController
     if session[:user_id]
       @user = User.find session[:user_id]
     end
+
+    if Rails.env.development?
+      @redirect_uri = "http://127.0.0.1:3000/auth"
+    else
+      @redirect_uri = "http://gitsleep.com/auth"
+    end
   end
 
   def auth
