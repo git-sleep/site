@@ -8,7 +8,7 @@ class AuthorizeController < ApplicationController
     if Rails.env.development?
       @redirect_uri = "http://127.0.0.1:3000/auth"
     else
-      @redirect_uri = "http://gitsleep.com/auth"
+      @redirect_uri = "http://www.gitsleep.com/auth"
     end
   end
 
