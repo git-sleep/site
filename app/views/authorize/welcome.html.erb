@@ -1,31 +1,69 @@
-<% if session[:user_id] %>
-  <h1>Welcome back, <%= @user.first_name %></h1>
-  <%= image_tag "https://jawbone.com/#{@user.photo}" %>
-  
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">GitSleep</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+<br>
+<br>
+<br>
+    <div class="container">
+        <div class="hero-unit">
+      <% if session[:user_id] %>
 
-  <div class="instructions">
-    <h2>Instructions</h2>
-    <ul>
+      <h1>Welcome back, <%= @user.first_name %></h1>
+      <%= image_tag "https://jawbone.com/#{@user.photo}" %>
+
+
+
+      <h2>Instructions</h2>
+      <p>    
+        <ul>
       <li><code>gem install git-sleep</code></li>
       <li><code>git sleep authorize</code></li>
       <li>Provide your xid: <code><%= @user.xid %></code></li>
-    </ul>
-  </div>
+        </ul>
+      </p>
 
-
-
+  
   <br><a href="/logout">TTYL (logout)</a>
    
-<% else %>
-  <h1>Authorize with Jawbone?</h1>
-  <%= form_tag "https://jawbone.com/auth/oauth2/auth", :method => "GET" do %>
-    <%= hidden_field_tag 'client_id', ENV["JAWBONE_CLIENT_ID"] %>
-    <%= hidden_field_tag 'response_type', 'code' %>
-    <%= hidden_field_tag 'scope', 'basic_read sleep_read' %>
-    <%= hidden_field_tag 'redirect_uri', "http://www.gitsleep.com/auth" %>
-    <%= submit_tag "Go get token and brb" %>
-  <% end %>
- 
+  <% else %>
+    <h1>Authorize with Jawbone?</h1>
+    <%= form_tag "https://jawbone.com/auth/oauth2/auth", :method => "GET" do %>
+      <%= hidden_field_tag 'client_id', ENV["JAWBONE_CLIENT_ID"] %>
+      <%= hidden_field_tag 'response_type', 'code' %>
+      <%= hidden_field_tag 'scope', 'basic_read sleep_read' %>
+      <%= hidden_field_tag 'redirect_uri', "http://www.gitsleep.com/auth" %>
+      <%= submit_tag "Go get token and brb", :class=> "btn btn-success" %>
+    <% end %>
+   
 
-<% end %>
+  <% end %>
+
+      </div>
+    </div> <!-- /container -->
+
+
+
+
+
+
+
+
+
+
 
