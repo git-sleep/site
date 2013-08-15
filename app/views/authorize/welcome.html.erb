@@ -9,9 +9,9 @@
       <a class="brand" href="#">GitSleep</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="/about">About</a></li><%= render 'about' %>
-          <li><a href="/contact">Contact</a></li>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
           <ul class="nav pull-right">
           <li><% if session[:user_id] %><a href="/logout">TTYL (logout)</a>   
           <% end %></li>  
@@ -47,6 +47,12 @@
     </div>
   <% end %>
 
+<%= render 'about' %>
+<%= render 'contact' %>
+<footer>
+  <p><strong>Made with healthy hacking habits at the <a href = "https://jawbone.com/up/">Jawbone</a> + <a href="http://tumblr.com">Tumblr</a> + <a href = "http://www.clintonfoundation.org/">Clinton Foundation</a> + <a href = "http://www.acehotel.com/newyork">Ace Hotel Hackathon</a><span class="pull-right">August 9-11, 2013</span></strong></p>
+</footer>
 </div> <!-- /container -->
+
 
 
