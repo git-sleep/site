@@ -11,7 +11,7 @@ gem 'omniauth'
 gem 'thin'
 gem 'httparty'
 gem 'debugger'
-gem 'omniauth-jawbone', '~> 0.0.42'
+gem 'omniauth-jawbone', '~> 0.0.43'
 
 group :development do
   gem 'better_errors'

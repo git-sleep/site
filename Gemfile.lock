@@ -160,7 +160,7 @@ DEPENDENCIES
   httparty
   jquery-rails
   omniauth
-  omniauth-jawbone (~> 0.0.42)
+  omniauth-jawbone (~> 0.0.43)
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   sqlite3
