@@ -14,14 +14,18 @@ class AuthorizeController < ApplicationController
 
   def auth
 
-    token = User.temporary_code_to_token(params[:code])
-    user_info = User.token_to_user_info(token)
+    auth = request.env["omniauth.auth"]
+    debugger
+    @user = User.find_or_create_from_omniauth(auth)
+
+    # token = User.temporary_code_to_token(params[:code])
+    # user_info = User.token_to_user_info(token)
     
-    @user = User.find_or_create_by_xid(user_info["xid"])
+    # @user = User.find_or_create_by_xid(user_info["xid"])
     @user.token = token
-    @user.photo = user_info["image"]
-    @user.first_name = user_info["first"]
-    @user.last_name = user_info["last"]
+    @user.photo = auth["image"]
+    @user.first_name = auth["first"]
+    @user.last_name = auth["last"]
     @user.save
     session[:user_id] = @user.id
     redirect_to root_path
