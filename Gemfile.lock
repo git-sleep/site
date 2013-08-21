@@ -91,7 +91,7 @@ GEM
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
-    omniauth-jawbone (0.0.19)
+    omniauth-jawbone (0.0.42)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.0)
     omniauth-oauth2 (1.1.1)
@@ -160,7 +160,7 @@ DEPENDENCIES
   httparty
   jquery-rails
   omniauth
-  omniauth-jawbone (~> 0.0.19)
+  omniauth-jawbone (~> 0.0.42)
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   sqlite3
