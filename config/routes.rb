@@ -4,7 +4,7 @@ GitSleep::Application.routes.draw do
   get '/api/need_sleep' => 'sleep#need_sleep'
   get '/about' => 'authorize#welcome', :as => 'about'
   get '/contact' => 'authorize#welcome', :as => 'contact'
-
+  match '/auth/:provider/callback', to: 'authorize#auth'
   get 'logout', to: 'authorize#logout', as: 'logout'
 
   # The priority is based upon order of creation:

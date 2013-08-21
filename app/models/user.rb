@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
     student.update_from_omniauth(auth)
     identity_attributes = {uid: auth['uid'], provider: auth['provider']}
     case auth['provider']
-    when 'github'
+    when 'jawbone'
       identity_attributes.merge!(:auth_token => auth.credentials.token)
     end
     student.identities.create(identity_attributes)

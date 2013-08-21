@@ -15,6 +15,7 @@ class AuthorizeController < ApplicationController
   def auth
 
     auth = request.env["omniauth.auth"]
+    user = User.create(:auth_token => auth["credentials"].token) if user.nil?   #:auth_token_secret => auth["credentials"].secret, :uid => auth["uid"], :twitter_handle => auth["info"].nickname, :name => auth["info"].name, :provider => auth["provider"], :oauth_token => auth["extra"].access_token.params[:oauth_token], :oauth_verifier => auth["extra"].access_token.params[:oauth_token_secret]) if user.nil?    
     debugger
     @user = User.find_or_create_from_omniauth(auth)
 
