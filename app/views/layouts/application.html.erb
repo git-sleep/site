@@ -20,10 +20,14 @@
 <body>
   <%= render "layouts/navbar" %>
   <div class="container">
-    <%= yield %>
-    <%= render 'layouts/about' %>
-    <%= render 'layouts/contact' %>
-    <%= render 'layouts/footer' %>
+    <div class="row-fluid">
+      <div class="span12">
+        <%= yield %>
+        <%= render 'layouts/about' %>
+        <%= render 'layouts/contact' %>
+        <%= render 'layouts/footer' %>
+      </div>
+    </div>
   </div>
 </body>
 </html>
