@@ -19,14 +19,12 @@
 </head>
 <body>
   <%= render "layouts/navbar" %>
-  <div class="container">
-    <div class="row-fluid">
-      <div class="span12">
-        <%= yield %>
-        <%= render 'layouts/about' %>
-        <%= render 'layouts/contact' %>
-        <%= render 'layouts/footer' %>
-      </div>
+  <div class="row row-fluid">
+    <div class="span7 offset2">
+      <%= yield %>
+      <%= render 'layouts/about' %>
+      <%= render 'layouts/contact' %>
+      <%= render 'layouts/footer' %>
     </div>
   </div>
 </body>
