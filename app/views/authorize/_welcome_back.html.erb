@@ -1,0 +1,12 @@
+<%= image_tag "https://jawbone.com/#{@user.photo}", :class => "pull-right" %>
+<h1>Welcome back, <%= @user.first_name %></h1>
+<div class="hero-unit">
+  <h2>Instructions</h2>
+  <ul>
+    <li><code>gem install git-sleep</code></li>
+    <li><code>git sleep authorize</code></li>
+    <li>Provide your xid: <code><%= @user.xid %></code></li>
+    <li>Navigate to a repo and run <code>git sleep init</code></li>
+    <li>Pay attention to your next commit</li>
+  </ul>
+</div>

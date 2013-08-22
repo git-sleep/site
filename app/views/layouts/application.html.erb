@@ -18,9 +18,13 @@
 
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render "layouts/navbar" %>
+  <div class="container">
+    <%= yield %>
+    <%= render 'layouts/about' %>
+    <%= render 'layouts/contact' %>
+    <%= render 'layouts/footer' %>
+  </div>
 </body>
 </html>
 
