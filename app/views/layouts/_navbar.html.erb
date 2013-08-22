@@ -13,8 +13,9 @@
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
           <ul class="nav pull-right">
-          <li><% if session[:user_id] %><a href="/logout">TTYL (logout)</a>   
-          <% end %></li>  
+            <% if session[:user_id] %>
+            <li><a href="/logout">TTYL (logout)</a></li>
+            <% end %>
           </ul>
         </ul>
       </div><!--/.nav-collapse -->
