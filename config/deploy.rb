@@ -3,7 +3,7 @@ require 'bundler/capistrano' # for bundler support
 set :application, "git-sleep"
 set :repository,  "git@github.com:flatiron-school/git-sleep.git"
 
-set :user, 'deploy'
+set :user, ENV['USER']
 set :deploy_to, "/home/#{ user }/#{ application }"
 set :use_sudo, false
 
@@ -11,8 +11,8 @@ set :scm, :git
 
 default_run_options[:pty] = true
 
-role :web, "192.241.185.17"                          # Your HTTP server, Apache/etc
-role :app, "192.241.185.17"                          # This may be the same as your `Web` server
+role :web, ENV['SERVER']                           # Your HTTP server, Apache/etc
+role :app, ENV['SERVER']                           # This may be the same as your `Web` server
 before 'deploy:assets:precompile', 'deploy:symlink_config'
 
 # if you want to clean up old releases on each deploy uncomment this:
