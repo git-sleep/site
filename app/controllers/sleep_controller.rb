@@ -12,8 +12,9 @@ class SleepController < ApplicationController
         :headers => { "Authorization" => "Bearer #{@user.token}" }
       )
 
-      yesterday = Time.now -  24.hours
-      range = (yesterday..Time.now)
+      today = Time.now
+      yesterday = today -  24.hours
+      range = (yesterday..today)
 
       complete_sleep_events = sleep["data"]["items"].keep_if { |x| range.cover?(Time.at(x["details"]["asleep_time"])) }
 
