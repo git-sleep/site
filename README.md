@@ -1,8 +1,6 @@
 # git-sleep
 
-## TODOS
-
-- let user set min_sleep
+## setup
 
 add `config/application.yml` with this format:
 
