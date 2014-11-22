@@ -5,4 +5,8 @@
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
 
-GitSleep::Application.config.secret_token = ENV['SECRET_TOKEN']
+if Rails.env.production?
+  GitSleep::Application.config.secret_token = ENV['SECRET_TOKEN']
+else
+  GitSleep::Application.config.secret_token = 'b4b15af8356b5b3c6320f9695923dcbf'
+end

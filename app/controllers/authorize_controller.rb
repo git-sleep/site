@@ -16,7 +16,7 @@ class AuthorizeController < ApplicationController
 
     token = User.temporary_code_to_token(params[:code])
     user_info = User.token_to_user_info(token)
-    
+
     @user = User.find_or_create_by_xid(user_info["xid"])
     @user.token = token
     @user.photo = user_info["image"]
@@ -31,5 +31,5 @@ class AuthorizeController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path, notice: "Logged out!"
   end
- 
 end
+

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :token, :xid
-  
+
   def self.temporary_code_to_token(code)
     json = HTTParty.post(
       "https://jawbone.com/auth/oauth2/token",
